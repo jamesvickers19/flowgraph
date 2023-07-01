@@ -1,0 +1,12 @@
+digraph CanYouVote {
+
+  A [type="integer" min="0" max="150" isStart="true" question="How old are you?"]
+  B [type="boolean" question="Are you a US citizen?"]
+  C [type="terminal" text="You cannot vote"]
+  D [type="terminal" text="You can vote"]
+
+  A -> B [answer="> 18, json logic?"]
+  A -> C [answer="< 18, json logic?"]
+  B -> C [answer="false"]
+  C -> D [answer="true"]
+}

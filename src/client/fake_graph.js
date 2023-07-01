@@ -1,0 +1,4 @@
+const g = JSON.parse(`{ "name": "CanYouVote", "directed": true, "strict": false, "_subgraph_cnt": 0, "objects": [ { "_gvid": 0, "name": "A", "isStart": "true", "label": "", "max": "150", "min": "0", "question": "How old are you?", "type": "integer" }, { "_gvid": 1, "name": "B", "label": "", "question": "Are you a US citizen?", "type": "boolean" }, { "_gvid": 2, "name": "C", "label": "", "text": "You cannot vote", "type": "terminal" }, { "_gvid": 3, "name": "D", "label": "", "text": "You can vote", "type": "terminal" } ], "edges": [ { "_gvid": 0, "tail": 0, "head": 1, "answer": "> 18, json logic?" }, { "_gvid": 1, "tail": 0, "head": 2, "answer": "< 18, json logic?" }, { "_gvid": 2, "tail": 1, "head": 2, "answer": "false" }, { "_gvid": 3, "tail": 2, "head": 3, "answer": "true" } ] }`);
+
+
+export default g;
