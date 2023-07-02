@@ -12,6 +12,10 @@ function nodeLookupByName(nodes) {
     return Object.assign({}, ...nodes.map((x) => ({ [x.name]: x })));
 }
 
+function formatGraphName(name) {
+    return name.replace(/([A-Z][a-z])/g, ' $1').replace(/(\d)/g, ' $1');
+}
+
 const GraphControl = (graph) => {
     const nameToNode = nodeLookupByName(graph.objects);
     return RenderGraphControl({ nameToNode: nameToNode, ...graph });
@@ -29,7 +33,7 @@ const RenderGraphControl = (graph) => {
 
     return (
         <div>
-            <h1 style={headerStyle}>Flowgraph: {name}</h1>
+            <h1 style={headerStyle}>{formatGraphName(name)}</h1>
             {renderNode(currentNode, nodeCallback)}
         </div>
     );
