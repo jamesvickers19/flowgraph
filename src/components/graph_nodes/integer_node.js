@@ -13,6 +13,7 @@ const IntegerNode = (
                 max={max}
                 defaultValue={null}
                 onChange={setAnswer} />
+            <br />
             <button
                 disabled={answer === null}
                 onClick={e => submitCallback(answer)}>

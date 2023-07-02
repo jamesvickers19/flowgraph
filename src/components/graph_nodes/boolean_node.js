@@ -11,6 +11,7 @@ const BooleanNode = ({ questionText, submitCallback }) => {
                 <Radio value={true}>Yes</Radio>
                 <Radio value={false}>No</Radio>
             </Radio.Group>
+            <br />
             <button
                 disabled={answer === null}
                 onClick={e => submitCallback(answer)}>

@@ -2,6 +2,12 @@ import renderNode from './node_renderer.js';
 import { useState } from 'react';
 import jsonLogic from 'json-logic-js';
 
+const headerStyle = {
+    margin: "auto",
+    textAlign: "center",
+    width: "50%",
+};
+
 function nodeLookupByName(nodes) {
     return Object.assign({}, ...nodes.map((x) => ({ [x.name]: x })));
 }
@@ -23,7 +29,7 @@ const RenderGraphControl = (graph) => {
 
     return (
         <div>
-            <h1>Flowgraph: {name}</h1>
+            <h1 style={headerStyle}>Flowgraph: {name}</h1>
             {renderNode(currentNode, nodeCallback)}
         </div>
     );
